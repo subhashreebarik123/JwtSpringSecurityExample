@@ -1,6 +1,5 @@
 package com.JwtExample.ApplicationConfig;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,13 +22,13 @@ public class AppConfig {
                 .roles("ADMIN")
                 .build();
 
-        UserDetails user1 = User.builder()
-                .username("Shree")
-                .password(passwordEncoder().encode("Password"))
-                .roles("ADMIN")
+        UserDetails serviceUser = User.builder()
+                .username("ServiceA")
+                .password(passwordEncoder().encode("ServiceSecret"))
+                .roles("SERVICE")
                 .build();
 
-        return new InMemoryUserDetailsManager(user, user1);
+        return new InMemoryUserDetailsManager(user, serviceUser);
     }
 
     @Bean

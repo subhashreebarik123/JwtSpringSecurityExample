@@ -9,7 +9,7 @@ import lombok.*;
 @Builder
 public class JwtResponse{
 
-    private String JwtToken;
+    private String jwtToken;
     private String userName;
 
 }

@@ -10,7 +10,7 @@ import lombok.*;
 @Builder
 public class JwtRequest {
 
-    private String Email;
-    private  String Password;
+    private String email;
+    private  String password;
 }
 
